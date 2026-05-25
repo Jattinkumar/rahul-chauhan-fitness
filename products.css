@@ -1,0 +1,369 @@
+:root {
+    --neon-lime: #d4ff00;
+    --bg-dark: rgb(18, 18, 18);
+    --card-bg: #1e1e1e;
+    --cyber-blue: #00f2ff;
+    --insta-pink: #ff007a;
+}
+
+/* Reset */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+overflow-x:hidden;
+}
+
+body{
+background-color:#000;
+color:white;
+font-family:'Segoe UI',sans-serif;
+overflow-x:hidden;
+}
+
+/* Layout */
+
+.page-wrapper{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+.content-rail{
+max-width:1100px;
+margin:0 auto;
+padding:0 40px;
+width:100%;
+}
+
+/* Navigation */
+
+.top-nav{
+background:#000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 5%;
+height:80px;
+position:sticky;
+top:0;
+z-index:1000;
+border-bottom:2px solid var(--neon-lime);
+}
+
+.logo-box{
+border:2px solid var(--neon-lime);
+color:var(--neon-lime);
+padding:5px 10px;
+font-family:'Archivo Black',sans-serif;
+text-align:center;
+line-height:0.9;
+}
+
+.top-nav nav a{
+color:white;
+text-decoration:none;
+font-weight:700;
+margin-left:20px;
+font-size:0.9rem;
+position:relative;
+}
+
+.top-nav nav a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:0;
+height:2px;
+background:var(--cyber-blue);
+transition:0.3s;
+}
+
+.top-nav nav a:hover::after{
+width:100%;
+}
+
+/* Intro */
+
+.section-intro{
+text-align:center;
+max-width:650px;
+margin:15px auto 60px;
+color:#bfbfbf;
+font-size:15px;
+line-height:1.6;
+}
+
+/* Product Grid */
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+}
+
+/* Product Card */
+
+.product-card{
+background:#0f0f0f;
+border:1px solid rgba(255,255,255,0.05);
+box-shadow:0 10px 25px rgba(0,0,0,0.6);
+border-radius:10px;
+overflow:hidden;
+transition:0.35s ease;
+padding: 15px;
+
+}
+
+.product-card:hover{
+transform:translateY(-6px);
+border-color:#00d4ff;
+box-shadow:0 0 18px rgba(0,212,255,0.25);
+}
+
+.product-card.highlight:hover{
+border-color:var(--cyber-blue);
+}
+
+/* Development State */
+
+.product-card.development{
+opacity:0.8;
+filter:grayscale(0.4);
+transition:0.4s ease;
+cursor:default;
+}
+
+.product-card.development:hover{
+opacity:1;
+filter:grayscale(0);
+transform:translateY(-5px);
+border-color:var(--cyber-blue);
+}
+
+/* Product Image */
+
+.product-image{
+background:#161616;
+height:170px;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+}
+
+.placeholder-img{
+font-family:'Archivo Black',sans-serif;
+font-size:16px;
+letter-spacing:1px;
+color:#777;
+}
+
+/* Badge */
+
+.badge{
+position:absolute;
+top:12px;
+left:12px;
+font-size:11px;
+padding:5px 9px;
+border-radius:3px;
+background:#ff007f;
+color:white;
+font-weight:600;
+box-shadow:0 0 8px rgba(255,0,127,0.4);
+}
+
+.badge.blue{
+background:#00d4ff;
+box-shadow:0 0 8px rgba(0,212,255,0.35);
+}
+
+/* Product Info */
+
+.product-info{
+padding:22px;
+}
+
+.product-info h3{
+margin-bottom:10px;
+font-size:18px;
+}
+
+.product-info p{
+color:#b8b8b8;
+font-size:14px;
+line-height:1.6;
+}
+
+.status-tag{
+display:block;
+margin-top:14px;
+font-size:12px;
+color:#8a8a8a;
+}
+
+/* Waiting List */
+
+.waiting-list-section{
+margin-top:80px;
+}
+
+.waiting-box{
+background:#0f0f0f;
+border:1px solid rgba(255,255,255,0.05);
+border-radius:10px;
+padding:40px;
+text-align:center;
+max-width:1000px;
+margin:auto;
+}
+
+.waiting-box h2{
+font-family:'Archivo Black',sans-serif;
+margin-bottom:10px;
+}
+
+.waiting-box p{
+color:#bfbfbf;
+margin-bottom:25px;
+}
+
+/* Form */
+
+.wait-form{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.wait-form input{
+padding:12px 14px;
+border:none;
+outline:none;
+width:260px;
+background:#161616;
+color:white;
+}
+
+.wait-btn{
+padding:12px 20px;
+border:none;
+background:#ff007f;
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:0.25s;
+}
+
+.wait-btn:hover{
+background:#ff2a9d;
+}
+
+.wide-title{
+font-family:'Archivo Black',sans-serif;
+font-size:4rem;
+font-weight:900;
+letter-spacing:2px;
+line-height:0.9;
+margin-top:60px;
+margin-bottom:20px;
+text-transform:uppercase;
+}
+
+.wide-title span{
+display:block;
+font-size:4rem;
+}
+.products-page .wide-title span{
+color:#ccff00;
+}
+
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.wait-form{
+flex-direction:column;
+align-items:center;
+}
+
+.wait-form input{
+width:100%;
+max-width:320px;
+}
+
+.wait-btn{
+width:100%;
+max-width:320px;
+}
+
+}
+
+/* Footer */
+
+.dev-footer{
+text-align:center;
+padding:40px;
+color:#555;
+font-size:0.8rem;
+}
+
+.dev-footer span{
+color:var(--neon-lime);
+}
+
+/* Tablet */
+
+@media (max-width:768px){
+
+.form-row{
+flex-direction:column;
+gap:0;
+}
+
+}
+/* ==========================================
+   📱 GLOBAL MOBILE OVERRIDES (max-width: 768px)
+   ========================================== */
+@media screen and (max-width: 768px) {
+    /* 1. Fix Navbar Collision */
+    .top-nav {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 15px 20px !important;
+        gap: 10px;
+    }
+    .top-nav nav {
+        display: flex;
+        justify-content: center;
+        gap: 15px !important;
+        flex-wrap: wrap;
+    }
+    .top-nav nav a {
+        font-size: 13px !important;
+    }
+
+    /* 2. Global Content Padding Reset */
+    .content-rail {
+        padding: 0 15px !important;
+        width: 100% !important;
+        overflow-x: hidden;
+    }
+    
+    /* 3. Drop down giant fonts */
+    .wide-title, .section-title {
+        font-size: 2.2rem !important;
+        line-height: 1.1 !important;
+        margin-bottom: 20px !important;
+    }
+}

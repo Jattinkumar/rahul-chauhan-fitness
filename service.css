@@ -1,0 +1,301 @@
+/* 1. VARIABLES & RESET */
+:root {
+    --neon-lime: #ccff00;
+    --cyber-blue: #00d4ff;
+    --insta-pink: #ff007f;
+    --bg-dark: #000000;
+    --card-bg: #111111;
+    --text-main: #ffffff;
+    --text-dim: #999999;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body { 
+    background: var(--bg-dark); 
+    color: var(--text-main); 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    overflow-x: hidden; 
+}
+
+/* 2. GLOBAL LAYOUT SYSTEM */
+.content-rail {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* 3. NAVIGATION */
+.top-nav {
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    height: 80px;
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    border-bottom: 2px solid var(--neon-lime);
+}
+
+.logo-box {
+    border: 2px solid var(--neon-lime);
+    color: var(--neon-lime);
+    padding: 5px 10px;
+    font-family: 'Archivo Black', sans-serif;
+    text-align: center;
+    line-height: 0.9;
+}
+
+.top-nav nav a {
+    color: white; 
+    text-decoration: none; 
+    font-weight: 700; 
+    margin-left: 20px; 
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.top-nav nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--cyber-blue);
+    transition: 0.3s;
+}
+
+.top-nav nav a:hover::after {
+    width: 100%;
+}
+
+/* 4. SERVICES SECTION */
+.wide-title {
+    font-size: clamp(3rem, 10vw, 6rem);
+    line-height: 0.9;
+    margin: 60px 0;
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+}
+
+.wide-title span { 
+    color: var(--insta-pink); 
+}
+
+.services-stack {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.service-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    padding: 60px 0;
+    padding-left: 35px;
+    border-left: 4px solid var(--accent, var(--neon-lime));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: center;
+}
+
+.service-row h2 { 
+    font-family: 'Archivo Black', sans-serif; 
+    font-size: 2rem; 
+    margin-bottom: 15px; 
+    color: var(--accent, var(--neon-lime));
+}
+
+/* 5. COMPONENTS (Buttons, Lists, Features) */
+.check-list { 
+    list-style: none; 
+    margin: 20px 0; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px; 
+}
+
+.check-list li { 
+    color: #ccc; 
+    display: flex; 
+    align-items: center; 
+    font-size: 0.9rem;
+}
+
+.check-list li::before { 
+    content: '✓'; 
+    color: var(--accent, var(--neon-lime)); 
+    margin-right: 12px; 
+    font-weight: bold; 
+}
+
+.service-btn {
+    display: inline-block;
+    padding: 18px 35px;
+    background: var(--accent, var(--neon-lime));
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.90rem;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.service-btn:hover {
+    background: white;
+    color: black;
+    box-shadow: 0px 5px 5px #aaaaaa;
+    transform: translateY(-2px);
+}
+
+/* 6. CUSTOM PATH BOX */
+.custom-path { 
+    background: var(--card-bg); 
+    padding: 40px; 
+    border: 1px solid #222; 
+}
+
+.custom-features { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+    margin: 20px 0; 
+}
+
+.custom-features span { 
+    background: #222; 
+    padding: 8px 15px; 
+    border-radius: 10px; 
+    font-size: 0.8rem; 
+    color:var(--neon-lime); 
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* 7. FAQ SECTION */
+.faq-section { 
+    background: #080808; 
+    padding: 100px 0; 
+    margin-top: 80px; 
+    border-top: 1px solid #222; 
+}
+
+.faq-item { 
+    border-bottom: 1px solid #222; 
+}
+
+.faq-question {
+    width: 100%; 
+    background: none; 
+    border: none; 
+    color: white;
+    padding: 30px 0; 
+    text-align: left; 
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.1rem; 
+    cursor: pointer; 
+    display: flex; 
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+.faq-question:hover {
+    color: var(--neon-lime);
+}
+
+.faq-answer { 
+    max-height: 0; 
+    overflow: hidden; 
+    transition: 0.4s ease; 
+    color: var(--text-dim); 
+    line-height: 1.6; 
+}
+
+.faq-item.active .faq-answer { 
+    max-height: 500px; 
+    padding-bottom: 30px; 
+}
+
+.faq-item.active .faq-question {
+    color: var(--cyber-blue);
+}
+
+/* 8. FOOTER */
+.dev-footer { 
+    text-align: center; 
+    padding: 60px 40px; 
+    color: #555; 
+    font-size: 0.8rem; 
+}
+
+.dev-footer span { 
+    color: var(--neon-lime); 
+}
+
+/* 9. RESPONSIVE DESIGN */
+@media (max-width: 968px) {
+    .service-row { 
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+    .check-list { 
+        grid-template-columns: 1fr; 
+    }
+    .wide-title {
+        font-size: 3.5rem;
+    }
+}
+/* ==========================================
+   📱 GLOBAL MOBILE OVERRIDES (max-width: 768px)
+   ========================================== */
+@media screen and (max-width: 768px) {
+    /* 1. Fix Navbar Collision */
+    .top-nav {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 15px 20px !important;
+        gap: 10px;
+    }
+    .top-nav nav {
+        display: flex;
+        justify-content: center;
+        gap: 15px !important;
+        flex-wrap: wrap;
+    }
+    .top-nav nav a {
+        font-size: 13px !important;
+    }
+
+    /* 2. Global Content Padding Reset */
+    .content-rail {
+        padding: 0 15px !important;
+        width: 100% !important;
+        overflow-x: hidden;
+    }
+    
+    /* 3. Drop down giant fonts */
+    .wide-title, .section-title {
+        font-size: 2.2rem !important;
+        line-height: 1.1 !important;
+        margin-bottom: 20px !important;
+    }
+}
+   

@@ -1,0 +1,319 @@
+:root {
+    --neon-lime: #d4ff00;
+    --bg-dark: #121212;
+    --card-bg: #1e1e1e;
+    --cyber-blue: #00f2ff; /* Sharp, energetic blue */
+    --insta-pink: #ff007a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg-dark); color: white; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
+
+/* GLOBAL LAYOUT SYSTEM */
+
+html, body{
+    overflow-x:hidden;
+    margin:0;
+    padding:0;
+    background:#000;
+    color:#fff;
+}
+/* main container */
+
+.content-rail {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+} 
+/* Navigation */
+.top-nav {
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    height: 80px;
+    position: sticky; top: 0; z-index: 1000;
+    border-bottom: 2px solid var(--neon-lime);
+}
+
+.logo-box {
+    border: 2px solid var(--neon-lime);
+    color: var(--neon-lime);
+    padding: 5px 10px;
+    font-family: 'Archivo Black', sans-serif;
+    text-align: center;
+    line-height: 0.9;
+}
+.top-nav nav a{
+position:relative;
+}
+html{
+scroll-behavior:smooth;
+}
+
+.top-nav nav a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:0;
+height:2px;
+background:#00d4ff;
+transition:0.3s;
+}
+
+.top-nav nav a:hover::after{
+width:100%;
+}
+.top-nav nav a {
+    color: white; text-decoration: none; font-weight: 700; margin-left: 20px; font-size: 0.9rem;
+}
+/*mid section where contact info and contact form starts */
+.contact-section{ background-color: #201f1f; padding-top: 45px; padding-bottom: 45px;}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:80px;
+align-items:start;
+}
+
+.wide-title{
+font-family:'Archivo Black',sans-serif;
+text-transform:uppercase;
+line-height:0.9;
+margin:35px 0;
+font-size:clamp(3rem,8vw,5rem);
+}
+
+
+@media(max-width:768px){
+.contact-info .wide-title{
+font-size:80px;
+}
+}
+.contact-info .wide-title span{
+color:rgba(0,212,255);
+text-shadow:0 0 10px rgba(0,212,255,0.35);
+}
+.contact-container{
+max-width:1150px;
+margin:auto;
+padding:50px 20px 80px;
+}
+/* LEFT INFO SIDE */
+
+.contact-intro{
+color:#bfbfbf;
+line-height:1.7;
+margin:22px 0 45px;
+max-width:430px;
+}
+
+.info-item{
+margin-bottom:30px;
+}
+
+.label{
+font-size:11px;
+letter-spacing:1.5px;
+color:#00d4ff;
+display:block;
+margin-bottom:6px;
+}
+
+.info-item p{
+color:#9f9f9f;
+}
+
+/* INSTAGRAM BUTTON */
+
+.social-links{
+margin-top:35px;
+}
+
+.social-icon{
+display:inline-block;
+padding:13px 18px;
+border:1px solid rgba(0,212,255,0.3);
+color:#00d4ff;
+text-decoration:none;
+font-size:13px;
+letter-spacing:0.5px;
+transition:0.25s;
+}
+
+.social-icon:hover{
+background:#00d4ff;
+color:black;
+box-shadow:0 0 12px rgba(0,212,255,0.4);
+}
+
+/* FORM CARD */
+
+.contact-form-box{
+background:#0d0d0d;
+border:1px solid rgba(255,255,255,0.06);
+border-radius:12px;
+padding:45px;
+box-shadow:0 15px 40px rgba(0,0,0,0.65);
+}
+
+/* INPUT GROUP */
+
+.input-group{
+margin-bottom:22px;
+}
+
+.input-group label{
+font-size:11px;
+letter-spacing:1.4px;
+color:#ff007f;
+margin-bottom:6px;
+display:block;
+}
+
+/* INPUTS */
+
+input,
+textarea,
+select{
+width:100%;
+padding:13px 14px;
+background:#141414;
+border:1px solid rgba(255,255,255,0.05);
+color:white;
+font-size:14px;
+outline:none;
+transition:0.25s;
+}
+
+/* INPUT FOCUS */
+
+input:focus,
+textarea:focus,
+select:focus{
+border-color:#00d4ff;
+box-shadow:0 0 8px rgba(0,212,255,0.25);
+}
+
+/* BUTTON */
+
+.contact-btn{
+margin-top:10px;
+padding:14px 22px;
+border:none;
+background:#ff007f;
+color:white;
+font-weight:600;
+letter-spacing:0.6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.contact-btn:hover{
+background:#ff2c9d;
+box-shadow:0 0 10px rgba(255,0,127,0.5);
+}
+/* success modal */
+
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border: 2px solid var(--neon-lime);
+    padding: 50px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal-content h2 { color: var(--neon-lime); margin-bottom: 20px; font-family: 'Archivo Black'; }
+.modal-content p { color: white; margin-bottom: 30px; }
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.contact-grid{
+grid-template-columns:1fr;
+gap:60px;
+}
+
+.contact-form-box{
+padding:35px;
+}
+
+}
+/*footer section*/
+/* Footer */
+.dev-footer { text-align: center; padding: 40px; color: #555; font-size: 0.8rem; }
+.dev-footer span { color: var(--neon-lime); }
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+/* ==========================================
+   📱 GLOBAL MOBILE OVERRIDES (max-width: 768px)
+   ========================================== */
+@media screen and (max-width: 768px) {
+    /* 1. Fix Navbar Collision */
+    .top-nav {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 15px 20px !important;
+        gap: 10px;
+    }
+    .top-nav nav {
+        display: flex;
+        justify-content: center;
+        gap: 15px !important;
+        flex-wrap: wrap;
+    }
+    .top-nav nav a {
+        font-size: 13px !important;
+    }
+
+    /* 2. Global Content Padding Reset */
+    .content-rail {
+        padding: 0 15px !important;
+        width: 100% !important;
+        overflow-x: hidden;
+    }
+    
+    /* 3. Drop down giant fonts */
+    .wide-title, .section-title {
+        font-size: 2.2rem !important;
+        line-height: 1.1 !important;
+        margin-bottom: 20px !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .contact-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 35px !important;
+    }
+
+    .contact-form-box {
+        padding: 20px 15px !important;
+        width: 100% !important;
+    }
+    
+    input, textarea, select {
+        padding: 11px 12px !important;
+    }
+}
